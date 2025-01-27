@@ -17,8 +17,9 @@ By running the application entirely offline, your data remains within your syste
 2. [Project Hierarchy](#project-hierarchy)
 3. [Installation](#installation)
 4. [Usage](#usage)
-5. [ChatBot UI](#chatbot-ui)
-6. [Key Features](#key-features)
+5. [Qdrant Setup](#qdrant-setup)
+6. [ChatBot UI](#chatbot-ui)
+7. [Key Features](#key-features)
 
 ---
 
@@ -103,7 +104,21 @@ Follow the steps below to use the application:
    Upload PDF files to the pdfs directory. The pdf_filehandler.py module processes them asynchronously.
 
 ---
-
+## Qdrant Setup
+Qdrant is a vector search engine that can store and retrieve document embeddings efficiently. Follow these steps to set up Qdrant using Docker:
+**Prerequisites**
+Ensure Docker is installed on your system. You can download it from [Docker's official site](https://www.docker.com/).
+**Steps to Set Up Qdrant**
+1. Pull the Qdrant Docker Image:
+   Run the following command to pull the latest Qdrant Docker image:
+   ```plaintext
+    docker pull qdrant/qdrant
+   ```
+2. Run the Qdrant Docker Container:
+   Start a Qdrant container using the following command:
+    ```plaintext
+    docker run -d --name qdrant -p 6333:6333 qdrant/qdrant
+   ```
 ## ChatBot UI
 ![image](https://github.com/user-attachments/assets/b553db5d-5bd1-436d-b8ed-4bf4605c1af3)
 
