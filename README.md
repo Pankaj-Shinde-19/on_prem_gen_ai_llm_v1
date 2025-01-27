@@ -75,7 +75,7 @@ To get started, follow these steps:
    ```
 2. Install dependencies:
    ```plaintext
-   pip install -r requirements.txt - for "handlers" dirctory and "api" directory.
+   pip install -r requirements.txt - for "handlers" and "api" directory.
    ```
 3. Install the Llama library using the following GitHub repository: [Ollama Python](https://github.com/ollama/ollama-python)
 
