@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+# Ignore all files pdfs in the data directory
+data/
+
+# Ignore the logo.png file in the frontend directory
+frontend/logo.png
+=======
+>>>>>>> 4309676cda9bbb0173e3b31ec4a29e936cfe676e

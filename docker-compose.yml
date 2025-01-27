@@ -1,0 +1,76 @@
+version: '3.8'
+services:
+  qdrant:
+    container_name: qdrant
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/data
+    networks:
+      - internal-net
+      
+  ollama:
+    container_name: ollama
+    image: ollama/ollama:latest
+    ports:
+      - "12000:11434"
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+    networks:
+      - internal-net
+
+  watcher:
+    container_name: watcher
+    build: 
+      context: .
+      dockerfile: Dockerfile.watcher
+    ports:
+      - "8080:8080"
+    volumes:
+      - qdrant_data:/app/data
+    depends_on:
+      - qdrant
+    networks:
+      - internal-net
+    tty: true
+  
+  api:
+    container_name: api
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+    depends_on:
+      - qdrant
+      - ollama
+    networks:
+      - internal-net
+
+  streamlit:
+    container_name: streamlit
+    build: 
+      context: .
+      dockerfile: Dockerfile.streamlit
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    networks:
+      - internal-net
+
+
+
+volumes:
+  qdrant_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/data
+      o: bind
+
+networks:
+  internal-net:
+    driver: bridge

@@ -1,0 +1,12 @@
+FROM python:3.10-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the requirements file and install dependencies
+COPY handlers ./handlers
+COPY data ./data
+
+RUN pip3 install -r ./handlers/requirements.txt
+
+CMD [ "python", "./handlers/watcher.py" ]
