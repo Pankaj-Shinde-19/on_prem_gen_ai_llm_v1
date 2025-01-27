@@ -20,7 +20,7 @@ By running the application entirely offline, your data remains within your syste
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [Qdrant Setup](#qdrant-setup)
-6. [Docker Setup](#docker-sertup)
+6. [Docker Setup](#docker-setup)
 7. [ChatBot UI](#chatbot-ui)
 8. [Key Features](#key-features)
 
