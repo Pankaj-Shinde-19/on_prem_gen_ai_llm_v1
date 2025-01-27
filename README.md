@@ -37,10 +37,11 @@ By running the application entirely offline, your data remains within your syste
 ## Project Hierarchy
 Here's an overview of the project's structure:
 ```plaintext
-on_prem_gen_ai/
+on_prem_gen_ai_llm_v1/
 ├── api/
 │   ├── __init__.py
 │   └── app.py
+│   └── requirements.txt
 ├── frontend/
 │   ├── __init__.py
 │   ├── chatbot_ui.py
@@ -49,11 +50,17 @@ on_prem_gen_ai/
 ├── handlers/
 │   ├── __init__.py
 │   ├── pdf_filehandler.py
-│   └── watcher.py
-├── pdfs/          # Directory for uploading PDF files
+│   ├── watcher.py
+│   └── requirements.txt
+├── data/
+│   └── pdfs/  # Directory for storing PDF training data
 ├── .gitignore
+├── docker-compose.yml
 ├── Dockerfile
-├── requirements.txt
+├── Dockerfile.streamlit
+├── Dockerfile.watcher
+└── README.md
+
 ```
 
 ---
@@ -63,12 +70,12 @@ To get started, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Pankaj-Shinde-19/on_prem_gen_ai.git
-   cd on_prem_gen_ai
+   git clone https://github.com/Pankaj-Shinde-19/on_prem_gen_ai_llm_v1.git
+   cd on_prem_gen_ai_llm_v1
    ```
 2. Install dependencies:
    ```plaintext
-   pip install -r requirements.txt
+   pip install -r requirements.txt - for "handlers" dirctory and "api" directory.
    ```
 3. Install the Llama library using the following GitHub repository: [Ollama Python](https://github.com/ollama/ollama-python)
 
