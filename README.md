@@ -1,3 +1,5 @@
+
+
 # On Premise Generative AI (on_prem_gen_ai)
 
 ## Description
@@ -18,8 +20,9 @@ By running the application entirely offline, your data remains within your syste
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [Qdrant Setup](#qdrant-setup)
-6. [ChatBot UI](#chatbot-ui)
-7. [Key Features](#key-features)
+6. [Docker Setup](#docker-sertup)
+7. [ChatBot UI](#chatbot-ui)
+8. [Key Features](#key-features)
 
 ---
 
@@ -104,21 +107,59 @@ Follow the steps below to use the application:
    Upload PDF files to the pdfs directory. The pdf_filehandler.py module processes them asynchronously.
 
 ---
-## Qdrant Setup
+## Qdrant for Storing Embeddings
 Qdrant is a vector search engine that can store and retrieve document embeddings efficiently. Follow these steps to set up Qdrant using Docker:
+
 **Prerequisites**
+
 Ensure Docker is installed on your system. You can download it from [Docker's official site](https://www.docker.com/).
+
 **Steps to Set Up Qdrant**
-1. Pull the Qdrant Docker Image:
+1. **Pull the Qdrant Docker Image:**
+   
    Run the following command to pull the latest Qdrant Docker image:
    ```plaintext
     docker pull qdrant/qdrant
    ```
-2. Run the Qdrant Docker Container:
+2. **Run the Qdrant Docker Container:**
+   
    Start a Qdrant container using the following command:
     ```plaintext
     docker run -d --name qdrant -p 6333:6333 qdrant/qdrant
    ```
+
+## Docker Setup 
+To set up the project using Docker, follow these steps:
+
+1. **Build and Start the Services:**
+    
+    Run the following command to build the Docker images and start the services:
+     ```plaintext
+    docker-compose up --build
+     ```
+2. **Verify in Docker Desktop:**
+    
+    Open the Docker Desktop app.
+
+    You will see the containers for the project.
+
+    Each container corresponds to a specific service.
+3. **Service Links in Sequence:**
+
+    Below is the sequence of services and their respective links (accessible through the container logs or UI):
+
+- **API:** Link to the API service.
+
+- **Qdrant:** Link to the Qdrant vector database.
+
+- **Ollama:** Link for the Ollama service.
+
+- **Watcher:** Link for the PDF watcher.
+
+- **Streamlit:** Link for the Streamlit UI.
+
+ake sure all containers are running correctly, and you can access the respective services as needed.
+
 ## ChatBot UI
 ![image](https://github.com/user-attachments/assets/b553db5d-5bd1-436d-b8ed-4bf4605c1af3)
 
