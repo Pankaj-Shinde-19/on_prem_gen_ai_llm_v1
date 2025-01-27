@@ -148,15 +148,15 @@ To set up the project using Docker, follow these steps:
 
     Below is the sequence of services and their respective links (accessible through the container logs or UI):
 
-- **API:** Link to the API service.
+      - **API:** Link to the API service.
 
-- **Qdrant:** Link to the Qdrant vector database.
+      - **Qdrant:** Link to the Qdrant vector database.
 
-- **Ollama:** Link for the Ollama service.
+      - **Ollama:** Link for the Ollama service.
 
-- **Watcher:** Link for the PDF watcher.
+      - **Watcher:** Link for the PDF watcher.
 
-- **Streamlit:** Link for the Streamlit UI.
+      - **Streamlit:** Link for the Streamlit UI.
 
 ake sure all containers are running correctly, and you can access the respective services as needed.
 
