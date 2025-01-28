@@ -19,8 +19,8 @@ By running the application entirely offline, your data remains within your syste
 2. [Project Hierarchy](#project-hierarchy)
 3. [Installation](#installation)
 4. [Usage](#usage)
-5. [Qdrant Setup](#qdrant-setup)
-6. [Docker Setup](#docker-setup)
+5. [Qdrant Setup](#qdrant-for-storing-embeddings)
+6. [Docker Setup](#docker-sertup)
 7. [ChatBot UI](#chatbot-ui)
 8. [Key Features](#key-features)
 
@@ -148,15 +148,15 @@ To set up the project using Docker, follow these steps:
 
     Below is the sequence of services and their respective links (accessible through the container logs or UI):
 
-      - **API:** Link to the API service.
+- **API:** Link to the API service.
 
-      - **Qdrant:** Link to the Qdrant vector database.
+- **Qdrant:** Link to the Qdrant vector database.
 
-      - **Ollama:** Link for the Ollama service.
+- **Ollama:** Link for the Ollama service.
 
-      - **Watcher:** Link for the PDF watcher.
+- **Watcher:** Link for the PDF watcher.
 
-      - **Streamlit:** Link for the Streamlit UI.
+- **Streamlit:** Link for the Streamlit UI.
 
 ake sure all containers are running correctly, and you can access the respective services as needed.
 
