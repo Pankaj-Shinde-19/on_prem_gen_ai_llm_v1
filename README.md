@@ -13,7 +13,7 @@ This project includes:
 By running the application entirely offline, your data remains within your system, ensuring compliance with data security policies.
 
 ## Architecture Diagram
-![image](https://drive.google.com/file/d/1dJ4SKq19sLzv8Q5dls5wuKjV_uyIh7HX/view)
+![image](https://github.com/Pankaj-Shinde-19/on_prem_gen_ai_llm_v1/blob/main/on_prem_gen_ai_architecture.png)
 
 ---
 
