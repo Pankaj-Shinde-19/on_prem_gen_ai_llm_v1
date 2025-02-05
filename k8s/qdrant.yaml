@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qdrant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qdrant
+  template:
+    metadata:
+      labels:
+        app: qdrant
+    spec:
+      containers:
+      - name: qdrant
+        image: pankajshinde/on_prem_gen_ai_llm_v1:qdrant-latest
+        # image: vaibhavdagwalagivant/on_prem_gen_ai_llm_v1-onpremgenai
+        ports:
+        - containerPort: 6333
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 6333
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 6333
+          initialDelaySeconds: 15
+          periodSeconds: 20
+---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: qdrant
+# spec:
+#   ports:
+#   - port: 6333
+#     targetPort: 6333
+#   selector:
+#     app: qdrant
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: qdrant
+spec:
+  type: NodePort
+  selector:
+    app: qdrant
+  ports:
+    - protocol: TCP
+      port: 6333
+      targetPort: 6333
+      nodePort: 30002

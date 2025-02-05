@@ -1,0 +1,50 @@
+# # pv-pvc.yaml
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: qdrant-pv
+#   namespace: on-prem-gen-ai
+# spec:
+#   capacity:
+#     storage: 5Gi
+#   accessModes:
+#     - ReadWriteOnce
+#   hostPath:
+#     path: /data/qdrant
+
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: qdrant-pvc
+#   namespace: on-prem-gen-ai
+# spec:
+#   resources:
+#     requests:
+#       storage: 5Gi
+#   accessModes:
+#     - ReadWriteOnce
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: qdrant-pv
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /data/qdrant
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: qdrant-pvc
+spec:
+  resources:
+    requests:
+      storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
