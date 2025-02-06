@@ -32,13 +32,9 @@ By running the application entirely offline, your data remains within your syste
 
 ## Important Notes
 
-1. **Excluded PDFs Directory**  
-   The `pdfs` directory, which contains all the PDF files used in this project, is excluded from this repository using a `.gitignore` file. You can access the required PDF files through the following Google Drive link:  
-   [PDF Files - Google Drive Link](https://drive.google.com/drive/folders/1VI63OL5TGYnp7d-yUSEqFoGcf3OhHZo-?usp=drive_link)
-
-2. **Excluded Logo File**  
-   The `logo.png` file located under the `frontend` directory is also excluded. You can access it through the following link:  
-   [Logo Image - Google Drive Link](https://drive.google.com/drive/folders/11qbcWBCOTPk6qUNBf3q1QlJFqnD2gdiH?usp=drive_link)
+1. **Add PDFs Under Data Directory**  
+   The `Data` directory, which contains all the PDF files used in this project, you should have pdf under that directory before starting your application.
+   
 
 ---
 
